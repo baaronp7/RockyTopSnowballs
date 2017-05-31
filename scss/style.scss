@@ -1,0 +1,89 @@
+$RTSOrange: #FC6502;
+$RTSBlue: #2795DE;
+$RTSPurple: #903EF2;
+
+@mixin bgGradient($colorOne, $colorTwo) {
+  background: $colorOne;
+  background: -moz-linear-gradient(top, $colorOne, $colorTwo);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($colorOne), color-stop($colorTwo));
+  background: -webkit-linear-gradient(top, $colorOne, $colorTwo);
+  background: -o-linear-gradient(top, $colorOne, $colorTwo);
+  background: -ms-linear-gradient(top, $colorOne, $colorTwo);
+  background: linear-gradient(to bottom, $colorOne, $colorTwo);
+}
+
+body {
+    max-width: 1280px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+
+    h2 {
+        font-weight: 900;
+        margin-top: 0;
+
+        span.RTSOrange { color: $RTSOrange; }
+        span.RTSBlue { color: $RTSBlue; }
+    }
+    div#logoHeader {
+        img { 
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    div#nav {
+        height: 40px;
+        margin-bottom: 20px;
+        @include bgGradient($RTSBlue, $RTSPurple);
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                float: left;
+                margin-top: 3px;
+                margin-left: 20px;
+                margin-right: 20px;
+                font-size: 24px;
+
+                a { color: #fff; }
+            }
+        }
+    }
+    div#postsList {
+        clear: both;
+
+        div.post {
+            clear: both;
+            display: inline-block;
+            border: 1px #ccc solid;
+            padding: 20px;
+
+            div.image {
+                max-height: 386.66px;
+                overflow: hidden;
+                margin-top: 10px;
+
+                img {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            div.postContent {
+                div.message {
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+    div#menu {
+        overflow: hidden;
+
+        img:first-child {
+            margin-top: -480px;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "rocky-top-snowballs",
+  "main": "server.js",
+  "version": "1.0.1",
+  "engines": {
+    "node": "6.2.0",
+    "npm": "3.8.9"
+  },
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "^4.6.1",
+    "express-partial": "^0.1.0",
+    "express-partials": "^0.3.0",
+    "request": "^2.76.0",
+    "https": "^1.0.0",
+    "http": "^0.0.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Benjamin Aaron Penton",
+  "license": "ISC"
+}

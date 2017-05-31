@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body>
+    <% include ../partials/header %>
+
+    <div id="postsList" class="col-md-6 col-sm-12">
+        <h2><span class="RTSOrange">Rocky Top</span> <span class="RTSBlue">Snowball's Feed</span></h2>
+        <%  var lookup = {};
+            for (var i = 0, len = JSON.parse(imagesJSON).data.length; i < len; i++) {
+                lookup[JSON.parse(imagesJSON).data[i].id] = JSON.parse(imagesJSON).data[i];
+            }
+            var date = new Date()
+        %>
+        <% for(var i in JSON.parse(postsJSON).data) { %>
+            <% var date = new Date(JSON.parse(postsJSON).data[i].created_time) %>
+            <div class="post">
+                <div class="postContent col-sm-12">
+                    <div class="date"><%- date.toLocaleDateString() %> <%- date.toLocaleTimeString() %></div>
+                    <div class="message"><%- JSON.parse(postsJSON).data[i].message %></div>
+                    <% if(typeof JSON.parse(postsJSON).data[i].strory == 'string') { %>
+                        <div class="story"><%- JSON.parse(postsJSON).data[i].strory %></div>
+                    <% } %>
+                </div>
+                <% if(lookup[JSON.parse(postsJSON).data[i].id] !== 'undefined') { %>
+                <div class="image col-sm-12">
+                    <img src="<%- lookup[JSON.parse(postsJSON).data[i].id].full_picture %>" class="img-responsive"/>
+                </div>
+                <% } %>
+            </div>
+        <% } %>
+    </div>
+    <div id="rightInfo" class="col-md-6 col-sm-12">
+        <h2><span class="RTSOrange">Rocky Top</span> <span class="RTSBlue">Snowball's Location</span></h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d404.7247591160783!2d-83.94664151874372!3d35.75576760771537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2268503a06bcb192!2sRocky+Top+Snoballs!5e0!3m2!1sen!2sus!4v1496256013283" width="610" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+</body>
+</html>
