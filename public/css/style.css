@@ -1,0 +1,75 @@
+body {
+  max-width: 1280px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700; }
+  body .col-sm-12 {
+    padding: 0; }
+  body h2 {
+    font-weight: 900;
+    margin-top: 0; }
+    body h2 span.RTSOrange {
+      color: #FC6502; }
+    body h2 span.RTSBlue {
+      color: #2795DE; }
+  body div#logoHeader img {
+    margin-left: auto;
+    margin-right: auto; }
+  body div#nav {
+    height: 40px;
+    margin-bottom: 20px;
+    background: #2795DE;
+    background: -moz-linear-gradient(top, #2795DE, #903EF2);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(#2795DE), color-stop(#903EF2));
+    background: -webkit-linear-gradient(top, #2795DE, #903EF2);
+    background: -o-linear-gradient(top, #2795DE, #903EF2);
+    background: -ms-linear-gradient(top, #2795DE, #903EF2);
+    background: linear-gradient(to bottom, #2795DE, #903EF2); }
+    body div#nav ul {
+      list-style: none;
+      padding: 0; }
+      body div#nav ul li {
+        float: left;
+        margin-top: 3px;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 24px; }
+        body div#nav ul li a {
+          color: #fff; }
+  body div#postsList {
+    clear: both;
+    padding-left: 0;
+    padding-right: 15px; }
+    body div#postsList div.post {
+      clear: both;
+      display: inline-block;
+      border: 1px #ccc solid;
+      padding: 20px; }
+      body div#postsList div.post div.image {
+        max-height: 386.66px;
+        overflow: hidden;
+        margin-top: 10px; }
+        body div#postsList div.post div.image img {
+          margin-left: auto;
+          margin-right: auto; }
+      body div#postsList div.post div.postContent div.message {
+        font-weight: 900; }
+  body div#rightInfo {
+    padding-right: 0;
+    padding-left: 15px; }
+  body div#menu {
+    overflow: hidden; }
+    body div#menu img:first-child {
+      margin-top: -480px; }
+  body div.hours {
+    margin-top: 10px;
+    padding-left: 0;
+    padding-right: 15px; }
+  body div.story {
+    margin-top: 10px;
+    padding-left: 15px;
+    padding-right: 0; }
+
+/*# sourceMappingURL=style.css.map */
