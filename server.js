@@ -15,16 +15,19 @@ var pageID = config.facebookGraphAPI.pageID;
 
 app.get('/', function (req, res) {
     fbAIP.getPosts(pageID, function(postsJSON) {
-        fbAIP.getImages(pageID, function(imagesJSON) {
-            if(typeof JSON.parse(imagesJSON).error == 'undefined') {
-                res.render('pages/posts', {
-                    imagesJSON: imagesJSON,
-                    postsJSON: postsJSON
-                });
-            }
-            else {
-                res.send(JSON.parse(imagesJSON).error.message);
-            }
+        fbAIP.getReviews(pageID, function(reviewsJSON) {
+            fbAIP.getImages(pageID, function(imagesJSON) {
+                if(typeof JSON.parse(imagesJSON).error == 'undefined') {
+                    res.render('pages/posts', {
+                        imagesJSON: imagesJSON,
+                        postsJSON: postsJSON,
+                        reviewsJSON: reviewsJSON
+                    });
+                }
+                else {
+                    res.send(JSON.parse(imagesJSON).error.message);
+                }
+            });
         });
     });
 });

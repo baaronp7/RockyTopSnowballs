@@ -35,6 +35,23 @@
     <div id="rightInfo" class="col-md-6 col-sm-12">
         <h2><span class="RTSOrange">Rocky Top</span> <span class="RTSBlue">Snowball's Location</span></h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d404.7247591160783!2d-83.94664151874372!3d35.75576760771537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2268503a06bcb192!2sRocky+Top+Snoballs!5e0!3m2!1sen!2sus!4v1496256013283" width="625" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div id="reviewsList" class="col-sm-12">
+        <h2><span class="RTSOrange">Rocky Top</span> <span class="RTSBlue">Snowball's Reviews</span></h2>
+        <% for(var i in JSON.parse(reviewsJSON).data) { %>
+            <% var date = new Date(JSON.parse(reviewsJSON).data[i].created_time) %>
+            <div class="review">
+                <div class="reviewer col-md-3 col-sm-12">
+                    <div class="date"><%- JSON.parse(reviewsJSON).data[i].reviewer.name %></div>
+                    <img class="img-responsive" src="https://graph.facebook.com/<%- JSON.parse(reviewsJSON).data[i].reviewer.id %>/picture?type=large&w‌​idth=720&height=720"/>
+                </div>
+                <div class="reviewContent col-md-9 col-sm-12">
+                    <div class="date"><%- date.toLocaleDateString() %> <%- date.toLocaleTimeString() %></div>
+                    <div class="stars<%- JSON.parse(reviewsJSON).data[i].rating %>"></div>
+                    <div class="reviewText"><%- JSON.parse(reviewsJSON).data[i].review_text %></div>
+                </div>
+            </div>
+        <% } %>
+        </div>
     </div>
 </body>
 </html>

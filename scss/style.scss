@@ -112,6 +112,10 @@ body {
         padding: 20px;
         width: 100%;
 
+        div.reviewer {
+            padding-right: 20px;
+        }
+
         div.stars1 {
             &:after {
                 content: "\f005";
