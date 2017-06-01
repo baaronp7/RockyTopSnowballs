@@ -36,7 +36,7 @@ app.get('/menu', function (req, res) {
 app.get('/reviews', function (req, res) {
     fbAIP.getReviews(pageID, function(reviewsJSON) {
         if(typeof JSON.parse(reviewsJSON).error == 'undefined') {
-            res.render('pages/posts', {
+            res.render('pages/reviews', {
                 reviewsJSON: reviewsJSON
             });
         }

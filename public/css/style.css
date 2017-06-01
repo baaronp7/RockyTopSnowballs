@@ -3,7 +3,7 @@ body {
   margin-left: auto !important;
   margin-right: auto !important;
   font-family: "Lato", Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700; }
   body .col-sm-12 {
     padding: 0; }
@@ -71,5 +71,37 @@ body {
     margin-top: 10px;
     padding-left: 15px;
     padding-right: 0; }
+  body div.review {
+    clear: both;
+    display: inline-block;
+    border: 1px #ccc solid;
+    padding: 20px; }
+    body div.review div.stars1:after {
+      content: "\f005";
+      font-family: FontAwesome;
+      font-size: 20px;
+      color: #2795DE; }
+    body div.review div.stars2:after {
+      content: "\f005 \f005";
+      font-family: FontAwesome;
+      font-size: 20px;
+      color: #2795DE; }
+    body div.review div.stars3:after {
+      content: "\f005 \f005 \f005";
+      font-family: FontAwesome;
+      font-size: 20px;
+      color: #2795DE; }
+    body div.review div.stars4:after {
+      content: "\f005 \f005 \f005 \f005";
+      font-family: FontAwesome;
+      font-size: 20px;
+      color: #2795DE; }
+    body div.review div.stars5:after {
+      content: "\f005 \f005 \f005 \f005 \f005";
+      font-family: FontAwesome;
+      font-size: 20px;
+      color: #2795DE; }
+    body div.review div.reviewText {
+      font-weight: 900; }
 
 /*# sourceMappingURL=style.css.map */
