@@ -75,7 +75,8 @@ body {
     clear: both;
     display: inline-block;
     border: 1px #ccc solid;
-    padding: 20px; }
+    padding: 20px;
+    width: 100%; }
     body div.review div.stars1:after {
       content: "\f005";
       font-family: FontAwesome;
