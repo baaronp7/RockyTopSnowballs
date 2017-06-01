@@ -11,10 +11,12 @@
         <% for(var i in JSON.parse(reviewsJSON).data) { %>
             <% var date = new Date(JSON.parse(reviewsJSON).data[i].created_time) %>
             <div class="review">
-                <div class="reviewer col-md-2 col-sm-12">
-                    <div class="date"><%- JSON.parse(reviewsJSON).data[i].reviewer.name %></div>
-                    <img class="img-responsive" src="https://graph.facebook.com/<%- JSON.parse(reviewsJSON).data[i].reviewer.id %>/picture?type=large&w‌​idth=720&height=720"/>
-                </div>
+                <a href="http://www.facebook.com/<%- JSON.parse(reviewsJSON).data[i].reviewer.id %>" target="_blank">
+                    <div class="reviewer col-md-2 col-sm-12">
+                        <div class="date"><%- JSON.parse(reviewsJSON).data[i].reviewer.name %></div>
+                        <img class="img-responsive" src="https://graph.facebook.com/<%- JSON.parse(reviewsJSON).data[i].reviewer.id %>/picture?type=large&w‌​idth=720&height=720"/>
+                    </div>
+                </a>
                 <div class="reviewContent col-md-10 col-sm-12">
                     <div class="date"><%- date.toLocaleDateString() %> <%- date.toLocaleTimeString() %></div>
                     <div class="stars<%- JSON.parse(reviewsJSON).data[i].rating %>"></div>

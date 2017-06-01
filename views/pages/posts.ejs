@@ -17,18 +17,20 @@
         <% for(var i in JSON.parse(postsJSON).data) { %>
             <% var date = new Date(JSON.parse(postsJSON).data[i].created_time) %>
             <div class="post">
-                <div class="postContent col-sm-12">
-                    <div class="date"><%- date.toLocaleDateString() %> <%- date.toLocaleTimeString() %></div>
-                    <div class="message"><%- JSON.parse(postsJSON).data[i].message %></div>
-                    <% if(typeof JSON.parse(postsJSON).data[i].strory == 'string') { %>
-                        <div class="story"><%- JSON.parse(postsJSON).data[i].strory %></div>
+                <a href="http://www.facebook.com/<%- JSON.parse(postsJSON).data[i].id %>" target="_blank">
+                    <div class="postContent col-sm-12">
+                        <div class="date"><%- date.toLocaleDateString() %> <%- date.toLocaleTimeString() %></div>
+                        <div class="message"><%- JSON.parse(postsJSON).data[i].message %></div>
+                        <% if(typeof JSON.parse(postsJSON).data[i].strory == 'string') { %>
+                            <div class="story"><%- JSON.parse(postsJSON).data[i].strory %></div>
+                        <% } %>
+                    </div>
+                    <% if(lookup[JSON.parse(postsJSON).data[i].id] !== 'undefined') { %>
+                    <div class="image col-sm-12">
+                        <img src="<%- lookup[JSON.parse(postsJSON).data[i].id].full_picture %>" class="img-responsive"/>
+                    </div>
                     <% } %>
-                </div>
-                <% if(lookup[JSON.parse(postsJSON).data[i].id] !== 'undefined') { %>
-                <div class="image col-sm-12">
-                    <img src="<%- lookup[JSON.parse(postsJSON).data[i].id].full_picture %>" class="img-responsive"/>
-                </div>
-                <% } %>
+                </a>
             </div>
         <% } %>
     </div>
@@ -40,10 +42,12 @@
         <% for(var i in JSON.parse(reviewsJSON).data) { %>
             <% var date = new Date(JSON.parse(reviewsJSON).data[i].created_time) %>
             <div class="review">
-                <div class="reviewer col-md-3 col-sm-12">
-                    <div class="date"><%- JSON.parse(reviewsJSON).data[i].reviewer.name %></div>
-                    <img class="img-responsive" src="https://graph.facebook.com/<%- JSON.parse(reviewsJSON).data[i].reviewer.id %>/picture?type=large&w‌​idth=720&height=720"/>
-                </div>
+                <a href="http://www.facebook.com/<%- JSON.parse(reviewsJSON).data[i].reviewer.id %>" target="_blank">
+                    <div class="reviewer col-md-3 col-sm-12">
+                        <div class="date"><%- JSON.parse(reviewsJSON).data[i].reviewer.name %></div>
+                        <img class="img-responsive" src="https://graph.facebook.com/<%- JSON.parse(reviewsJSON).data[i].reviewer.id %>/picture?type=large&w‌​idth=720&height=720"/>
+                    </div>
+                </a>
                 <div class="reviewContent col-md-9 col-sm-12">
                     <div class="date"><%- date.toLocaleDateString() %> <%- date.toLocaleTimeString() %></div>
                     <div class="stars<%- JSON.parse(reviewsJSON).data[i].rating %>"></div>

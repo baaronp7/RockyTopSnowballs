@@ -65,19 +65,23 @@ body {
             border: 1px #ccc solid;
             padding: 20px;
 
-            div.image {
-                max-height: 386.66px;
-                overflow: hidden;
-                margin-top: 10px;
+            a {
+                color: #333;
 
-                img {
-                    margin-left: auto;
-                    margin-right: auto;
+                div.image {
+                    max-height: 386.66px;
+                    overflow: hidden;
+                    margin-top: 10px;
+
+                    img {
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
                 }
-            }
-            div.postContent {
-                div.message {
-                    font-weight: 900;
+                div.postContent {
+                    div.message {
+                        font-weight: 900;
+                    }
                 }
             }
         }
@@ -112,10 +116,13 @@ body {
         padding: 20px;
         width: 100%;
 
-        div.reviewer {
-            padding-right: 20px;
-        }
+        a {
+            color: #333;
 
+            div.reviewer {
+                padding-right: 20px;
+            }
+        }
         div.stars1 {
             &:after {
                 content: "\f005";

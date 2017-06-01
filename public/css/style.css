@@ -47,15 +47,17 @@ body {
       display: inline-block;
       border: 1px #ccc solid;
       padding: 20px; }
-      body div#postsList div.post div.image {
-        max-height: 386.66px;
-        overflow: hidden;
-        margin-top: 10px; }
-        body div#postsList div.post div.image img {
-          margin-left: auto;
-          margin-right: auto; }
-      body div#postsList div.post div.postContent div.message {
-        font-weight: 900; }
+      body div#postsList div.post a {
+        color: #333; }
+        body div#postsList div.post a div.image {
+          max-height: 386.66px;
+          overflow: hidden;
+          margin-top: 10px; }
+          body div#postsList div.post a div.image img {
+            margin-left: auto;
+            margin-right: auto; }
+        body div#postsList div.post a div.postContent div.message {
+          font-weight: 900; }
   body div#rightInfo {
     padding-right: 0;
     padding-left: 15px; }
@@ -77,8 +79,10 @@ body {
     border: 1px #ccc solid;
     padding: 20px;
     width: 100%; }
-    body div.review div.reviewer {
-      padding-right: 20px; }
+    body div.review a {
+      color: #333; }
+      body div.review a div.reviewer {
+        padding-right: 20px; }
     body div.review div.stars1:after {
       content: "\f005";
       font-family: FontAwesome;
